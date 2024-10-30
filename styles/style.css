@@ -24,7 +24,6 @@ body{
 /*header*/
 
 .page-header{
-    /*позиционирование, чтобы был прибит к верху экрана*/
     position: fixed;
     top: 0;
     left: 0;
@@ -142,6 +141,130 @@ body{
     width: 100%;
 }
 
+.section-title {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    width: 100%;
+    max-width: 624px;
+    min-height: 62px;
+    margin: 0 auto 150px;
+    padding: 8px 45px;
+    background-color: #1F1E1E;
+    color: #ffffff;
+    font-family: "Lora", sans-serif;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.277;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.listing {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; 
+    width: 100%;
+    max-width: 1414px;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.listing__events-list {
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 60px; 
+}
+
+.events {
+    padding: 140px 0 100px;
+}
+
+.events__listing { 
+    margin-bottom: 100px;
+}
+
+.event-card {
+    display: flex; 
+    width: 405px;
+    max-width: 100%;
+    min-width: 280px;
+}
+
+.event-card__link {
+    display: flex; 
+    flex-direction: column; 
+    width: 100%; 
+    color: #1F1E1E; 
+    text-decoration: none; 
+}
+  
+.event-card__link:hover .event-card__title { 
+    color: #BC3324;
+    text-decoration-color: #BC3324; 
+}
+  
+.event-card__picture {
+    display: block; 
+    position: relative; 
+    margin: 0 0 25px; 
+    width: 100%; 
+    font-size: 0; 
+    text-decoration: none;
+    overflow: hidden; 
+}
+  
+.event-card__picture::after {
+    content: ""; 
+    display: block; 
+    width: 100%; 
+    padding-top: 107.16%; 
+}
+  
+.event-card__img {
+    display: block;
+    position: absolute; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+  
+.event-card__title {
+    margin: 0 0 15px; 
+    min-height: 66px; 
+    color: #1F1E1E;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    text-decoration: underline transparent; 
+    transition: color 0.2s, text-decoration-color 0.2s; 
+}
+  
+.event-card__description {
+    margin: 0 0 auto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}
+  
+.event-card__time {
+    display: block; 
+    margin: 15px 0 0;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.listing__event-card {
+    width: calc(33.333% - 40px); 
+}
+
+.listing__event-card:nth-child(3n) {
+    margin-right: 0;
+}
 
 /*footer*/
 
