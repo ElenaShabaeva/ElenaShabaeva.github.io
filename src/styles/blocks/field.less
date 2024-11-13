@@ -1,0 +1,81 @@
+.field {
+    display: flex;
+    flex-direction: column;
+                
+    &__input,
+    &__textarea {
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      background-color: @white;
+      font-size: 16px;
+      line-height: 1.375;
+    }
+
+    &__input {
+        height: 55px;
+        padding: 0 20px;
+    }
+    &__textarea {
+        height: 150px;
+        padding: 20px;
+    }
+
+    &__title {
+        display: block;
+        margin: 0 0 10px;
+        color: @black;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 25px;
+    }
+    &__label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 16px;
+        line-height: 1.3;
+        color: @black;
+    }
+
+    &__select {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        height: 55px;
+        padding: 0 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: @white;
+        font-size: 16px;
+        line-height: 1.375;
+    }
+
+    &__date-inputs {
+        display: flex;
+        width: 100%;
+        max-width: 251px;
+        height: 55px;
+      }
+    
+    &__date-input {
+        box-sizing: border-box;
+        display: block;
+        width: 55px;
+        height: 55px;
+        margin-right: 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: @white;
+        padding: 0 5px;
+        font-size: 16px;
+        line-height: 1.375;
+        text-align: center;
+    
+        &--year {
+          flex-grow: 1;
+          margin-right: 0;
+        }
+      }
+}

@@ -1,0 +1,54 @@
+.btn{
+    display: inline-flex;
+    box-sizing: border-box;
+    padding: 15px 40px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid @black;
+    border-radius: 0;
+    background-color: transparent;
+    outline: none;
+    color: @black;
+    text-decoration: none;
+    font-family: @font1;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover,
+    &:active{
+        background-color: #1f1e1e;
+        color: #ffffff;
+    }
+
+    &--red{
+        background-color: @red;
+        border-color: #BC3324;
+        color: @white;
+    }
+}
+
+.x-btn {
+    display: flex;
+    outline: none;
+    border: none;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: @black;
+    transition: background-color 0.2s;
+  
+    &:hover {
+      background-color: @dark_red;
+    }
+  
+    &__icon {
+      margin: auto;
+      color: @white;
+    }
+}

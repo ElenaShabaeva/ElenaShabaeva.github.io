@@ -17,7 +17,7 @@ body{
     font-size: 16px;
     font-weight: 400;
     font-style: normal;
-    line-height: 1.375px;
+    /* line-height: 1.375px; */
 }
 
 
@@ -266,34 +266,34 @@ body{
     margin-right: 0;
 }
  
-.reserve {
+.reserve{
     display: grid;
     grid-template-columns: 405px 1fr;
-    grid-template-areas: 
+    grid-template-areas:
         "checkbox scheme"
         "order legend";
     gap: 65px 11%;
     width: 100%;
 }
 
-.reserve__checkbox {
+.reserve__checkbox{
     grid-area: "checkbox";
     background-color: aqua;
 }
 
-.reserve__scheme {
+.reserve__scheme{
     grid-area: "scheme";
-    background-color: skyblue;
-}
-
-.reserve__order {
-    grid-area: "order";
-    background-color: peru;
-}
-
-.reserve__legend {
-    grid-area: "legend";
     background-color: palevioletred;
+}
+
+.reserve__order{
+    grid-area: "order";
+    background-color: aquamarine;
+}
+
+.reserve__legend{
+    grid-area: "legend";
+    background-color: plum;
 }
 
 /*footer*/

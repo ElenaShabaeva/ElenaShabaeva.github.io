@@ -1,0 +1,32 @@
+.container() {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    max-width: 1414px;
+    width: 100%;
+}
+
+.is-hidden {
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    clip-path: inset(100%) !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+.show-event-popup {
+    body {
+      overflow: hidden;
+    }
+    #eventPP {
+      display: flex;
+    }
+}
