@@ -881,6 +881,18 @@ textarea:focus::placeholder {
   max-width: 1414px;
   width: 100%;
 }
+.article__container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  max-width: 1414px;
+  width: 100%;
+}
+.article__content {
+  max-width: 880px;
+}
 .content {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
