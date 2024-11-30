@@ -592,6 +592,15 @@ textarea:focus::placeholder {
   /*пересмотрет про стили и записать их*/
   margin-bottom: 100px;
 }
+.events__table-container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  max-width: 1414px;
+  width: 100%;
+}
 .page-header {
   position: fixed;
   top: 0;
