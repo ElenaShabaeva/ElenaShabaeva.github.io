@@ -1,0 +1,76 @@
+.pp {
+    display: none;
+    display: flex;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 90px 40px 50px;
+    background-color: fade(@gray, 90%);
+    // backdrop-filter: blur(50px);
+    overflow-y: auto;
+    z-index: 110;
+    
+    &__wrapper {
+      box-sizing: border-box;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 1210px;
+      margin: auto;
+      background-color: @light_gray;
+      background-image: url(../assets/images/noise.png);
+      background-position: 0 0;
+      background-size: auto;
+      background-repeat: repeat;
+      box-shadow: 0px 0px 30px rgba(31, 31, 30, 0.55);
+
+      @supports (backdrop-filter: blur(20px)){
+        box-shadow: none;
+      }
+    }
+
+    &__container {
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 0 40px 40px;
+    }
+
+    &__title {
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      margin: -40px 0 70px -85px;
+      padding: 10px 85px;
+      width: 595px;
+      min-height: 80px;
+      background-color: @black;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-family: @font2;
+      font-size: 22px;
+      line-height: 1.36;
+      color: @white;
+      letter-spacing: 0.02em;
+      z-index: 1;
+    }
+
+    &__sticky-close {
+      position: sticky;
+      top: 0;
+      align-self: flex-end;
+      width: 0;
+      height: 0;
+    }
+    
+    &__x-btn {
+      position: absolute;
+      top: -30px;
+      right: -30px;
+    }
+}
