@@ -1,0 +1,47 @@
+.reserve{
+    &__tickets {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+    }
+    &__qty {
+        &::after {
+            content: " " attr(data-caption) " | " attr(data-price);
+        }
+    }
+    &__sum {
+        &::after {
+            content: attr(data-currency);
+            margin-left: 4px;
+            font-size: 0.95em;
+        }
+    }
+    &__total {
+        width: 100%;
+        text-align: center;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 27.24px;
+        margin-bottom: 53px;
+        &::before {
+            content: attr(data-caption);
+            margin-right: 30px;
+        }
+        &::after {
+            content: attr(data-currency);
+            margin-left: 4px;
+            font-size: 0.95em;
+        }
+    }
+
+    &__submit {
+        width: 100%;
+    }
+}
