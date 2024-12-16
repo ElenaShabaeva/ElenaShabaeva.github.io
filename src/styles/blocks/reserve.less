@@ -7,10 +7,28 @@
     gap: 65px 11%;
     width: 100%;
 
-    // &__legend {
-    //     display: flex;
-    //     justify-content: flex-end;
-    // }
+    @media @bw1340{
+        gap: 65px 6.5%;
+        grid-template-columns: 340px calc(93.5% - 340px);
+    }
+
+    @media @bw768{
+        gap: 60px;
+        grid-template-columns: auto 390px;
+        grid-template-areas:
+            "scheme scheme"
+            "checks legend"
+            "checks order";
+    }
+
+    @media @bw370{
+        grid-template-columns: 100%;
+        grid-template-areas:
+            "scheme"
+            "legend"
+            "checks"
+            "order";
+    }
 
     &__section-title {
         font-size: 18px;
@@ -24,10 +42,4 @@
             line-height: 24.51px;
         }
     }
-
-    // &__checks {
-    //     display: flex;
-    //     flex-direction: column;
-    //     // gap: 10px;
-    // }
 }

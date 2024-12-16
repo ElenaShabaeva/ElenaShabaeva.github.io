@@ -1,21 +1,41 @@
 .listing {
-    box-sizing: border-box;
     display: flex;
     flex-direction: column; /*чтобы карточки располагались под заголовком*/
-    width: 100%;
-    max-width: 1414px;
-    margin: 0 auto;
-    padding-left: 40px;
-    padding-right: 40px;
+    .container;
 
     &__events-list { /*стили для контейнера с карточками мероприятий*/
         display: flex; /*задаем для того, чтобы наши карточки располагались по горизонтали (друг за другом в строчку)*/
         flex-wrap: wrap; /*задаем для того, чтобы если у нас будет больше 3 карточек, они переходили на следующую строку (в строке будет 3 карточки)*/
         gap: 60px; /*задаем отсутп между карточками*/
+
+        @media @bw1660{
+            gap: 40px;
+        }
+
+        @media @bw1020{
+            gap: 30px;
+        }
+
+        @media @bw650{
+            justify-content: center;
+        }
     }
 
     &__event-card {
         width: calc(33.333% - 40px); /*для того, чтобы карточка занимала треть от контейнера*/
+
+        @media @bw1660{
+            width: calc(33.333% - 26.6666px);
+        }
+
+        @media @bw1020{
+            width: calc(50% - 15px);
+        }
+
+        @media @bw650{
+            width: 100%;
+            max-width: 400px;
+        }
 
         &:nth-child(3n) {
             margin-right: 0;

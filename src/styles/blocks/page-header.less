@@ -11,30 +11,87 @@
     @supports(backdrop-filter: blur(20px)){}
     z-index: 100;
 
+    @media @bw1660 {
+        height: 111px;
+    }
+
+    @media @bw768{
+        height: 70px;
+    }
+
     &__container{
         .container;
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        z-index: 1;
     }
 
     &__logo{
+        position: relative;
         flex-shrink: 0;
         width: 202px;
         height: 147px;
         font-size: 0;
         text-decoration: none;
+        z-index: 1;
 
-        &-icon{
-            width: 100%;
-            height: 100%;
+        @media @bw1660 {
+            width: 152px;
+            height: 111px;
+        }
+
+        @media @bw768{
+            width: 96px;
+            height: 70px;
+        }
+
+        @media @bw400{
+            margin-left: -20px;
         }
     }
 
+    &__logo-icon{
+        width: 100%;
+        height: 100%;
+    }
+
     &__nav{
+        box-sizing: border-box;
         display: flex;
         align-items: baseline;
         margin: 0 auto;
+
+        @media @bw1020 {
+            margin: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 211px 30px 30px;
+            flex-direction: column;
+            gap: 30px;
+            width: 100%;
+            height: 100vh;
+            background-color: fade(@light_gray, 98%);
+            transform: translateX(-100%);
+            transition: transform 0.4s;
+        }
+    }
+
+    &__nav-link,
+    &__nav-user-link,
+    &__nav-logout {
+        color: @black;
+        text-decoration: none;
+
+        &:active {
+            color: @dark_red;
+        }
+
+        &:hover {
+            color: @red;
+        }
     }
 
     &__nav-link{
@@ -46,15 +103,120 @@
         text-decoration: none;
         transition: color 0.2s;
 
-        &:hover{
-            color: @red;
+        @media @bw1020 {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 5px 0;
+            font-size: 16px;
         }
+    }
+
+    &__nav-user-link {
+        display: none;
+        margin-top: 30px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        
+
+        @media @bw1020 {
+            display: flex;
+            gap: 25px;
+        }
+    }
+
+    &__nav-logout {
+        width: 24px;
+        height: 24px;
+        font-size: 0;
     }
     
     &__right-block{
+        position: relative;
         display: flex;
         justify-content: flex-end;
         align-items: center;
         width: 202px;
+        z-index: 1;
+
+        @media @bw1660 {
+            width: 111px;
+        }
+
+        @media @bw1020 {
+            margin-left: auto;
+            width: auto;
+            gap: 30px;
+        }
+    }
+
+    &__user-btn {
+        max-width: 100%;
+
+        &.btn{
+            @media @bw1020 {
+                margin-right: -8px;
+                border: none;
+                font-size: 0;
+                width: 40px;
+                height: 40px;
+                padding: 0;
+            }
+        }
+    }
+
+    &__user-icon {
+        display: none;
+
+        @media @bw1020 {
+            display: block;
+        }
+    }
+
+    &__nav-toggle {
+        display: none;
+
+        @media @bw1020 {
+            display: block;
+            position: relative;
+            border: none;
+            background-color: transparent;
+            outline: none;
+            border: 0;
+            width: 40px;
+            height: 40px;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 10px;
+            width: 20px;
+            height: 2px;
+            border-radius: 2px;
+            background-color: @black;
+            // transform-origin: 50% 50%;
+            // transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        &::before {
+            top: 13px;
+        }
+
+        &::after {
+            bottom: 13px;
+        }
+    }
+
+    &__nav-toggle-line {
+        position: absolute;
+        margin-top: -1px;
+        top: 50%;
+        left: 10px;
+        width: 20px;
+        height: 2px;
+        border-radius: 2px;
+        background-color: @black;
     }
 }
