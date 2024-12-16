@@ -20,7 +20,7 @@
       <a href="#" class="page-header__logo">
         <svg class="page-header_logo-icon" width="202" height="147">
           <use xlink:href="assets/icons/symbols.svg#logo"></use>
-        </svg>>
+        </svg>
       </a>
 
       <nav class="page-header__nav">
@@ -28,18 +28,25 @@
         <a href="#" class="page-header__nav-link">Блок</a>
         <a href="#" class="page-header__nav-link">О нас</a>
         <a href="#" class="page-header__nav-link">Контакты</a>
+
+        <a href="#" class="page-header__nav-user-link">
+          Александр С.
+          <svg class="page-header__user-icon" width="24" height="24">
+            <use xlink:href="assets/icons/symbols.svg#log-out-door"></use>
+          </svg>
+        </a>
       </nav>
 
       <div class="page-header__right-block">
-        <a href="#" class="btn page-header__user-btn">Войти</a>
-        <!-- <a href="#" class="page-header__name">Александр С.</a>
-            <a href="#" class="page-header__logout">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 17L15 12L10 7" stroke="#A51505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M15 12H3" stroke="#A51505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M15 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H15" stroke="#A51505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>  
-            </a> -->
+        <a href="#" class="btn page-header__user-btn">
+          Войти
+          <svg class="page-header__user-icon" width="21" height="18">
+            <use xlink:href="assets/icons/symbols.svg#user"></use>
+          </svg>
+        </a>
+        <button type="button" class="page-header__nav-toggle" id="navtoggle">
+          <span class="page-header__nav-toggle-line"></span>
+        </button>
       </div>
 
     </div>
@@ -47,6 +54,26 @@
 
   <main class="main">
     <div class="home">
+      <div class="main-title">
+        <p class="main-title__h1">арт — пространство</p>
+        <svg class="main-title__svg" width="1920" height="325">
+          <use xlink:href="assets/icons/symbols.svg#LENNI"></use>
+        </svg>
+        <p class="main-title__h1">для людей, горящих сердцЕМ и делом
+          <br> место для настоящего
+        </p>
+      </div>
+
+      <!-- prettier-ignore -->
+      <div class="wrapper">
+        <div class="wrapper__container">
+          <p class="wrapper__title">Я хочу:</p>
+          <div class="wrapper__buttons">
+            <a href="#" class="wrapper__btn wrapper__buttons-shows btn btn--red">Провести мероприятие</a>
+            <a href="#" class="wrapper__btn wrapper__buttons-arenda btn">Стать арендатором</a>
+          </div>
+        </div>
+      </div>
       <!-- prettier-ignore -->
       <section class="listing home__listing">
         <h2 class="listing__title section-title">Блог</h2>
