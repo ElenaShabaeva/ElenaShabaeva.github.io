@@ -1,14 +1,16 @@
-.page-header{
+.page-header {
+    /*позиционирование, чтобы был прибит к верху экрана*/
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 147px; 
+    height: 147px;
     display: flex;
     align-items: center;
     background-color: fade(@light_gray, 98%);
     backdrop-filter: blur(20px);
-    @supports(backdrop-filter: blur(20px)){}
+    @supports (backdrop-filter: blur(20px)) {
+    }
     z-index: 100;
 
     @media @bw1660 {
@@ -19,7 +21,7 @@
         height: 70px;
     }
 
-    &__container{
+    &__container {
         .container;
         position: relative;
         display: flex;
@@ -27,7 +29,7 @@
         z-index: 1;
     }
 
-    &__logo{
+    &__logo {
         position: relative;
         flex-shrink: 0;
         width: 202px;
@@ -51,12 +53,12 @@
         }
     }
 
-    &__logo-icon{
+    &__logo-icon {
         width: 100%;
         height: 100%;
     }
 
-    &__nav{
+    &__nav {
         box-sizing: border-box;
         display: flex;
         align-items: baseline;
@@ -93,12 +95,12 @@
         }
     }
 
-    &__nav-link{
+    &__nav-link {
         margin: 0 25px;
         color: @black;
         font-weight: 600;
         font-size: 18px;
-        line-height: 25px;
+        line-height: 1.4;
         text-decoration: none;
         transition: color 0.2s;
 
@@ -129,8 +131,8 @@
         height: 24px;
         font-size: 0;
     }
-    
-    &__right-block{
+
+    &__right-block {
         position: relative;
         display: flex;
         justify-content: flex-end;
