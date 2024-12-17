@@ -1027,16 +1027,16 @@ textarea:focus::placeholder {
   grid-template-areas: "checks scheme" "order legend";
   width: 100%;
 }
-.reserve .reserve__checks {
+.reserve__checks {
   grid-area: checks;
 }
-.reserve .reserve__order {
+.reserve__order {
   grid-area: order;
 }
-.reserve .reserve__scheme {
+.reserve__scheme {
   grid-area: scheme;
 }
-.reserve .reserve__scheme {
+.reserve__scheme {
   grid-area: scheme;
 }
 .event {
