@@ -1,0 +1,116 @@
+.about{
+    margin: 150px 0 0;
+    &__container{
+        .container;
+    }
+
+    &__block{
+        display: grid;
+        grid-template-columns: 1fr 400px;
+        grid-template-areas:
+            "title1 title1"
+            "text1 text1" 
+            "pic1 pic2"
+            "title2 pic2"
+            "text2 text2";
+        gap: 50px 60px;
+    }
+
+    &__subtitle1,
+    &__subtitle2{
+        margin: 0;
+        font-size: 44px;
+    }
+
+    &__text1,
+    &__text2{
+        margin: 0;
+        max-width: 870px;
+        margin-left: auto;
+    }
+
+    &__subtitle1{
+        grid-area: title1;
+    }
+
+    &__text1{
+        grid-area: text1;
+    }
+
+    &__picture1{
+        grid-area: pic1;
+    }
+
+    &__subtitle2{
+        grid-area: title2;
+        margin: 50px 0 0;
+    }
+
+    &__text2{
+        grid-area: text2;
+    }
+
+    &__picture2{
+        grid-area: pic2;
+        align-self: flex-end;
+    }
+
+    &__block3{
+        margin: 110px 0 0;
+        display: grid;
+        grid-template-columns: 1fr 344px;
+        grid-template-areas:
+            "pic3 content";
+        gap: 60px;
+    }
+
+    &__picture3{
+        grid-area: pic3;
+        display: block;
+        max-width: 930px;
+        width: 100%;
+        box-sizing: border-box;
+        position: relative;
+        padding: 18px 19px 0 49px;
+
+        &::before{
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 64.7%;
+            background-color: @red;
+        }
+
+        &::after{
+            content: "";
+            display: block;
+            width: 100%;
+            padding-top: 40.86%;
+        }
+    }
+
+    &__picture3-img{
+        position: absolute;
+        top: 19px;
+        left: 49px;
+        width: calc(100% - 57px);
+        object-fit: contain;
+    }
+
+    &__block3-content{
+        grid-area: content;
+        align-self: flex-end;
+        display: flex;
+        flex-direction: column;
+        gap: 90px;
+    }
+
+    &__block3-link{
+        display: flex;
+        justify-content: space-between;
+        max-width: 344px;
+        align-items: center;
+    }
+}

@@ -1036,8 +1036,8 @@ textarea:focus::placeholder {
 .reserve__scheme {
   grid-area: scheme;
 }
-.reserve__scheme {
-  grid-area: scheme;
+.reserve__legend {
+  grid-area: legend;
 }
 .event {
   -webkit-box-sizing: border-box;
@@ -1342,7 +1342,7 @@ textarea:focus::placeholder {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 70px;
-  padding-top: 100px;
+  padding: 100px 0;
 }
 .main-title__svg {
   -webkit-box-flex: 1;
@@ -1351,7 +1351,6 @@ textarea:focus::placeholder {
   width: 100%;
 }
 .main-title__h1 {
-  padding: 0;
   margin: 0;
   font-family: "Lora", serif;
   font-size: 40px;
@@ -1361,6 +1360,9 @@ textarea:focus::placeholder {
   text-transform: uppercase;
 }
 .wrapper {
+  padding-bottom: 50px;
+}
+.wrapper__container {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0 auto;
@@ -1368,10 +1370,11 @@ textarea:focus::placeholder {
   padding-right: 40px;
   max-width: 1414px;
   width: 100%;
-  padding: 0;
   width: 624px;
+  padding: 0;
 }
 .wrapper__title {
+  margin: 0;
   font-family: "Lora", serif;
   text-transform: uppercase;
   font-weight: 400;
@@ -1406,6 +1409,119 @@ textarea:focus::placeholder {
 .wrapper__btn {
   max-width: 100%;
   height: 52px;
+}
+.about {
+  margin: 150px 0 0;
+}
+.about__container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  max-width: 1414px;
+  width: 100%;
+}
+.about__block {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  grid-template-areas: "title1 title1" "text1 text1" "pic1 pic2" "title2 pic2" "text2 text2";
+  gap: 50px 60px;
+}
+.about__subtitle1,
+.about__subtitle2 {
+  margin: 0;
+  font-size: 44px;
+}
+.about__text1,
+.about__text2 {
+  margin: 0;
+  max-width: 870px;
+  margin-left: auto;
+}
+.about__subtitle1 {
+  grid-area: title1;
+}
+.about__text1 {
+  grid-area: text1;
+}
+.about__picture1 {
+  grid-area: pic1;
+}
+.about__subtitle2 {
+  grid-area: title2;
+  margin: 50px 0 0;
+}
+.about__text2 {
+  grid-area: text2;
+}
+.about__picture2 {
+  grid-area: pic2;
+  align-self: flex-end;
+}
+.about__block3 {
+  margin: 110px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 344px;
+  grid-template-areas: "pic3 content";
+  gap: 60px;
+}
+.about__picture3 {
+  grid-area: pic3;
+  display: block;
+  max-width: 930px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  padding: 18px 19px 0 49px;
+}
+.about__picture3::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64.7%;
+  background-color: #bc3324;
+}
+.about__picture3::after {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-top: 40.86%;
+}
+.about__picture3-img {
+  position: absolute;
+  top: 19px;
+  left: 49px;
+  width: calc(100% - 57px);
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.about__block3-content {
+  grid-area: content;
+  align-self: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 90px;
+}
+.about__block3-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 344px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .home__listing {
   margin-bottom: 95px;
@@ -1745,13 +1861,13 @@ textarea:focus::placeholder {
 }
 @media (max-width: 1659px) {
   .width_624 {
-    max-width: 664px;
+    max-width: 604px;
   }
   .body {
     padding-top: 111px;
   }
   .section-title {
-    max-width: 664px;
+    max-width: 604px;
   }
   .section-title {
     margin-bottom: 130px;
@@ -1782,10 +1898,10 @@ textarea:focus::placeholder {
     padding-right: 30px;
   }
   .width_624 {
-    max-width: 504px;
+    max-width: 604px;
   }
   .section-title {
-    max-width: 504px;
+    max-width: 604px;
   }
   .section-title {
     min-height: 52px;
@@ -1813,7 +1929,11 @@ textarea:focus::placeholder {
     padding-left: 30px;
     padding-right: 30px;
   }
-  .wrapper {
+  .wrapper__container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .about__container {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -2004,7 +2124,11 @@ textarea:focus::placeholder {
     padding-left: 20px;
     padding-right: 20px;
   }
-  .wrapper {
+  .wrapper__container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .about__container {
     padding-left: 20px;
     padding-right: 20px;
   }
