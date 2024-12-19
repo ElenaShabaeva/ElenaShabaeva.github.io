@@ -1,3 +1,169 @@
-.page-footer{
-    flex: 0 0 auto;
+.page-footer {
+    .container;
+    padding-bottom: 75px;
+    margin-top: 150px;
+
+    @media @bw1170 {
+        padding-bottom: 60px;
+    }
+
+    @media @bw600 {
+        padding-bottom: 50px;
+    }
+
+    &__liners {
+        display: flex;
+        margin-bottom: 60px;
+        gap: 100px;
+
+        @media @bw1660 {
+            gap: 90px;
+        }
+
+        @media @bw1020 {
+            gap: 50px;
+        }
+
+        @media @bw600 {
+            gap: 20px;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            flex-grow: 1;
+            width: 2px;
+            height: 2px;
+        }
+
+        &::before {
+            background: linear-gradient(
+                270deg,
+                #1c1b1b 0%,
+                rgba(255, 255, 255, 0) 82.86%
+            );
+        }
+
+        &::after {
+            background: linear-gradient(
+                90deg,
+                #1c1b1b 0%,
+                rgba(255, 255, 255, 0) 100%
+            );
+        }
+    }
+
+    &__block1 {
+        display: flex;
+        gap: 50px;
+        justify-content: space-between;
+        margin-bottom: 60px;
+    }
+
+    &__block1-links {
+        position: relative;
+        padding-left: 26px;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 4px;
+            background-color: @red;
+        }
+    }
+
+    &__block1-link {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.3;
+        text-decoration: none;
+        color: @black;
+        transition: color 0.2s;
+
+        &:hover {
+            @media (hover: hover) {
+                color: @red;
+            }
+        }
+
+        &:active {
+            color: @red;
+        }
+    }
+
+    &__block2{
+        display: grid;
+        grid-template-columns: 1fr 160px 1fr;
+        grid-template-areas: 
+            "copyright socials create"
+            "links socials create";
+    }
+
+    &__socials{
+        grid-area: socials;
+    }
+
+    &__block2-links{
+        grid-area: links;
+        display: flex;
+        gap: 60px
+    }
+
+    &__block2-link{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 21.79px;
+        text-decoration: none;
+
+        &:hover{
+            @media (hover: hover){
+                color: @red;
+            }
+        }
+
+        &:active{
+            color: @red;
+        }
+    }
+
+    &__copyright{
+        grid-area: copyright;
+        margin-bottom: 20px;
+    }
+
+    &__create{
+        grid-area: create;
+        align-self: flex-end;
+        margin-left: auto;
+        display: flex;
+        align-items: flex-end;
+        gap: 15px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 21.79px;
+    }
+
+    &__create-link{
+        flex-shrink: 0;
+        font-size: 0;
+        color: @black;
+        line-height: 0;
+        transition: color 0.2s;
+
+        &:hover{
+            @media (hover: hover){
+                color: @red;
+            }
+        }
+
+        &:active{
+            color: @red;
+        }
+    }
 }

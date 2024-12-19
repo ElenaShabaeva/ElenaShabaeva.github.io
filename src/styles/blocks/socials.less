@@ -1,0 +1,36 @@
+.socials{
+    display: flex;
+    align-items: center;
+
+    &__link{
+        flex-shrink: 0;
+        margin-right: 44px;
+        display: flex;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background-color: @black;
+        font-size: 0;
+        text-decoration: none;
+        transition: background-color 0.2s;
+        color: @white;
+
+        &:active{
+            background-color: @red;
+        }
+
+        &:hover{
+            @media (hover: hover){
+                background-color: @red;
+            }
+        }
+
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+
+    &__icon{
+        margin: auto;
+    }
+}
