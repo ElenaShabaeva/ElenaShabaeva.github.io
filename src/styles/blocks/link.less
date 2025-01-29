@@ -7,6 +7,26 @@
     color: @black;
     transition: color 0.2s;
 
+    &__blogs{
+        margin: 70px 0 0 auto;
+
+        @media @bw600{
+            margin-top: 45px;
+        }
+    }
+
+    &__events{
+        margin-top: 70px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        align-items: center;
+
+        @media @bw768{
+            font-size: 14px;
+        }
+    }
+
     &:hover{
         color: @red;
     }

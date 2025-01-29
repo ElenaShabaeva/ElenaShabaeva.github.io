@@ -1,4 +1,4 @@
-.btn{
+.btn {
     display: inline-flex;
     box-sizing: border-box;
     padding: 15px 40px;
@@ -20,15 +20,21 @@
     cursor: pointer;
 
     &:hover,
-    &:active{
+    &:active {
         background-color: #1f1e1e;
         color: #ffffff;
     }
 
-    &--red{
+    &--red {
         background-color: @red;
-        border-color: #BC3324;
+        border-color: #bc3324;
         color: @white;
+
+        &:hover,
+        &:active {
+            background-color: @dark_red;
+            color: #ffffff;
+        }
     }
 }
 
@@ -42,13 +48,20 @@
     border-radius: 50%;
     background-color: @black;
     transition: background-color 0.2s;
-  
-    &:hover {
-      background-color: @dark_red;
+
+    @media @bw768 {
+        width: 36px;
+        height: 36px;
     }
-  
+
+    &:hover {
+        background-color: @dark_red;
+    }
+
     &__icon {
-      margin: auto;
-      color: @white;
+        pointer-events: none;
+        margin: auto;
+        color: @white;
+        pointer-events: none;
     }
 }

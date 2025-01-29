@@ -1,0 +1,32 @@
+.arrow{
+    &--left{
+        rotate: 180deg;
+    }
+
+    &:hover{
+        @media (hover: hover){
+            color: @red;
+        }
+    }
+
+    &--disabled{
+        pointer-events: none;
+        color: @gray;
+    }
+
+    &__icon{
+        @media @bw1020{
+            width: 67px;
+            height: 40px;
+        }
+    }
+
+    &__events-icon{
+        rotate: 90deg;
+
+        @media @bw1020{
+            width: 67px;
+            height: 40px;
+        }
+    }
+}

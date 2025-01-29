@@ -1,0 +1,64 @@
+.doit{
+    box-sizing: border-box;
+    font-family: @font3;
+    position: relative;
+    width: 100%;
+    text-align: right;
+    white-space: nowrap;
+    pointer-events: none;
+    overflow: hidden;
+    font-size: 6vw;
+    line-height: 1.2;
+    font-weight: 700;
+
+    @media @full-hd{
+        font-size: 128px;
+    }
+
+    @media @bw1660{
+        font-size: 6.5vw;
+    }
+
+    @media @bw1020{
+        font-size: 8.5vw;
+    }
+
+    @media @bw600{
+        font-size: 10.5vw;
+    }
+
+    &__text{
+        margin: 0 0 0 -2.5vw;
+        
+        @media @bw1020{
+            display: flex;
+            flex-direction: column;
+        }
+
+        br{
+            @media @bw1020{
+                display: none;
+            }
+        }
+    }
+
+    &__word1{
+        text-align: left;
+    }
+
+    &__word2{
+        @media @bw1020{
+            margin-right: -10.6vw;
+        }
+
+        @media @bw600{
+            margin-right: -17.6vw;
+        }
+    }
+
+    &__word3{
+        @media @bw600{
+            margin-left: -14vw;
+        }
+    }
+}

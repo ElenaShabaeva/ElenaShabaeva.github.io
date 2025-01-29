@@ -148,24 +148,21 @@
     }
 
     &__title {
-        box-sizing: border-box;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        max-width: 624px;
-        min-height: 62px;
-        margin: 0 auto 150px;
-        padding: 16px 50px;
-        background-color: #1f1e1e;
-        color: #ffffff;
-        font-family: "Lora", sans-serif;
         font-weight: 400;
-        font-size: 22px;
-        line-height: 30px;
-        letter-spacing: 2%;
-        text-align: center;
-        text-transform: uppercase;
+        padding: 16px 50px;
+
+        @media @bw1340{
+            padding: 16px 40px;
+        }
+    
+        @media @bw768{
+            padding: 14px 20px;
+        }
+    
+        @media @bw600{
+            font-size: 16px;
+            max-width: 280px;
+        }
     }
 
     &__title-description {

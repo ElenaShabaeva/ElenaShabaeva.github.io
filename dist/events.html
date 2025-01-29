@@ -44,9 +44,7 @@
             <use xlink:href="assets/icons/symbols.svg#user"></use>
           </svg>
         </a>
-        <button type="button" class="page-header__nav-toggle" id="navtoggle">
-          <span class="page-header__nav-toggle-line"></span>
-        </button>
+        <button type="button" class="page-header__nav-toggle" id="js-navToggle"></button>
       </div>
     </div>
   </header>
@@ -61,16 +59,18 @@
           <article class="event-card listing__event-card">
             <a href="#" class="event-card__link">
               <picture class="event-card__picture">
+                <source type="image/webp" srcset="assets/images/events/Nirvana.webp" />
                 <img src="assets/images/events/Nirvana.jpg" alt="nirvana" class="event-card__img">
               </picture>
               <h4 class="event-card__title">Собираемся и слушаем альбом Nirvana</h4>
-              <p class="event-card__description">Это третий альбом группы...</p>
+              <p class="event-card__description">Это третий альбом группы, выпущенный после смерти Курта Кобейна и первый, содержащий студийный материал.</p>
               <time datetime="2022-12-07T18:00" class="event-card__time">07.12.2022 | начало 18.00</time>
             </a>
           </article>
           <article class="event-card listing__event-card">
             <a href="#" class="event-card__link">
               <picture class="event-card__picture">
+                <source type="image/webp" srcset="assets/images/events/HowStuffWorks.webp" />
                 <img src="assets/images/events/HowStuffWorks.jpg" alt="nirvana" class="event-card__img">
               </picture>
               <h4 class="event-card__title">Есть тема, нужно обсудить с HowStuffWorks</h4>
@@ -81,6 +81,7 @@
           <article class="event-card listing__event-card">
             <a href="#" class="event-card__link">
               <picture class="event-card__picture">
+                <source type="image/webp" srcset="assets/images/events/Sade.webp" />
                 <img src="assets/images/events/Sade.jpg" alt="Sade" class="event-card__img">
               </picture>
               <h4 class="event-card__title">Вечер | The Best of Sade</h4>
@@ -91,6 +92,7 @@
           <article class="event-card listing__event-card">
             <a href="#" class="event-card__link">
               <picture class="event-card__picture">
+                <source type="image/webp" srcset="assets/images/events/выставка Малевича.webp" />
                 <img src="assets/images/events/выставка Малевича.jpg" alt="выставка" class="event-card__img">
               </picture>
               <h4 class="event-card__title">Выставка Малевича в Томске</h4>
@@ -101,6 +103,7 @@
           <article class="event-card listing__event-card">
             <a href="#" class="event-card__link">
               <picture class="event-card__picture">
+                <source type="image/webp" srcset="assets/images/events/арт-съемка для Tatler.webp" />
                 <img src="assets/images/events/арт-съемка для Tatler.jpg" alt="Tatler" class="event-card__img">
               </picture>
               <h4 class="event-card__title">Мастер — класс по студийной съемке от Tatler</h4>
@@ -111,6 +114,7 @@
           <article class="event-card listing__event-card">
             <a href="#" class="event-card__link">
               <picture class="event-card__picture">
+                <source type="image/webp" srcset="assets/images/events/the hatters.webp" />
                 <img src="assets/images/events/the hatters.jpg" alt="Hatters" class="event-card__img">
               </picture>
               <h4 class="event-card__title">Повесилимся на славу на концерте The Hatters</h4>
@@ -119,12 +123,18 @@
             </a>
           </article>
         </div>
+        <a href="#" class="link__events link">
+          Показать еще
+          <svg class="arrow__events-icon" width="92" height="62">
+            <use xlink:href="assets/icons/symbols.svg#arrow"></use>
+          </svg>
+        </a>
       </section>
     </div>
     <div class="events__table-container">
       <!-- prettier-ignore -->
       <div class="table__descr">
-        <h2 class="table__title">Дополнительные услуги</h2>
+        <h2 class="table__title section-title">Дополнительные услуги</h2>
         <p class="table__title-description">Перед запуском проекта, мы подготавливаем подробную смету и согласуем ее с клиентом. Убедившись, что все
           пожеланию учтены и мы можем приступать к реализациии проекта, начинается сложная, но интересная работа,
           результатом которой будет проведение вашего мероприятия на высшем уровне.</p>
@@ -231,16 +241,59 @@
         </tfoot>
       </table>
     </div>
-    <!-- prettier-ignore -->
-    <div class="wrapper">
-      <div class="wrapper__container">
-        <p class="wrapper__title">Я хочу:</p>
-        <div class="wrapper__buttons">
-          <a href="#" class="wrapper__btn wrapper__buttons-shows btn btn--red">Провести мероприятие</a>
-          <a href="#" class="wrapper__btn wrapper__buttons-arenda btn">Стать арендатором</a>
+
+    <section class="events__block">
+      <!-- prettier-ignore -->
+      <div class="offers events__offers">
+        <p class="offers__text">Я хочу:</p>
+        <div class="offers__btns">
+          <button type="button" class="offers__btn btn btn--red" id="js-eventOpenBtn">Провести мероприятие</button>
+          <button type="button" class="offers__btn btn">Стать арендатором</button>
         </div>
       </div>
-    </div>
+
+
+      <!-- prettier-ignore -->
+      <div class="events__info">
+        <div class="contacts-item contacts-item--column">
+          <div class="contacts-item__wrap-icon">
+            <svg class="contacts-item__icon" width="24" height="24">
+              <use xlink:href="assets/icons/symbols.svg#information"></use>
+            </svg>
+          </div>
+          <div class="contacts-item__info">
+            <h4 class="contacts-item__title">Цены</h4>
+            <p class="contacts-item__text">Цены, указанные на сайте носят информационный характер. Мы придерживаемся
+              индивидуального подхода в работе с клиентом.</p>
+          </div>
+        </div>
+        <div class="contacts-item contacts-item--column">
+          <div class="contacts-item__wrap-icon">
+            <svg class="contacts-item__icon" width="24" height="24">
+              <use xlink:href="assets/icons/symbols.svg#contact"></use>
+            </svg>
+          </div>
+          <div class="contacts-item__info">
+            <h4 class="contacts-item__title">Контакты</h4>
+            <p class="contacts-item__text">Отдел организации мероприятий</p>
+            <a href="tel:+74993500730" class="contacts-item__text">+7 499 350 0730</a>
+            <a href="mailto:hi@tagree.ru" class="contacts-item__text">hi@tagree.ru</a>
+          </div>
+        </div>
+        <div class="contacts-item contacts-item--column">
+          <div class="contacts-item__wrap-icon">
+            <svg class="contacts-item__icon" width="24" height="24">
+              <use xlink:href="assets/icons/symbols.svg#handshake"></use>
+            </svg>
+          </div>
+          <div class="contacts-item__info">
+            <h4 class="contacts-item__title">Преимущество</h4>
+            <p class="contacts-item__text">Мы имеем все возможности для того, чтобы помочь как малому бизнесу и молодым талантам, так и большим корпорациям и холдингам.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- prettier-ignore -->
@@ -301,10 +354,10 @@
   </footer>
 
   <!-- prettier-ignore -->
-  <div class="pp">
+  <div class="pp" id="js-eventPP">
     <div class="pp__wrapper">
       <div class="pp__sticky-close">
-        <button type="button" name="Закрыть" class="pp__x-btn x-btn">
+        <button type="button" name="Закрыть" class="pp__x-btn x-btn js-ppCloseBtn">
           <svg class="x-btn__icon" width="24" height="24">
             <use xlink:href="assets/icons/symbols.svg#fi_x"></use>
           </svg>
@@ -384,22 +437,22 @@
             <div class="form__list">
               <label class="field form__field form__field--w50">
                 <span class="field__label">Имя*</span>
-                <input class="field__input" type="text" placeholder="Имя" name="name" require />
+                <input class="field__input" type="text" placeholder="Имя" name="name" required />
               </label>
 
               <label class="field form__field form__field--w50">
                 <span class="field__label">Фамилия*</span>
-                <input class="field__input" type="text" placeholder="Фамилия" name="last_name" require />
+                <input class="field__input" type="text" placeholder="Фамилия" name="last_name" required />
               </label>
 
               <label class="field form__field form__field--w50">
                 <span class="field__label">Телефон*</span>
-                <input class="field__input" type="tel" placeholder="Телефон" name="phone" require />
+                <input class="field__input" type="tel" placeholder="Телефон" name="phone" required />
               </label>
 
               <label class="field form__field form__field--w50">
                 <span class="field__label">Email*</span>
-                <input class="field__input" type="email" placeholder="Email" name="email" require />
+                <input class="field__input" type="email" placeholder="Email" name="email" required />
               </label>
             </div>
           </div>
@@ -423,7 +476,7 @@
               Отправить
             </button>
 
-            <button type="button" class="form__close-btn">
+            <button type="button" class="form__close-btn js-ppCloseBtn">
               Закрыть
             </button>
           </div>

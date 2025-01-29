@@ -1,17 +1,28 @@
 .pp {
     display: none;
-    display: flex;
     box-sizing: border-box;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 90px 40px 50px;
+    padding: 90px 100px 50px;
     background-color: fade(@gray, 90%);
-    // backdrop-filter: blur(50px);
     overflow-y: auto;
     z-index: 110;
+
+    @media @bw1340{
+      padding: 90px 40px 50px;
+    }
+
+    @media @bw768{
+      padding: 80px 20px 40px;
+    }
+
+    @supports (backdrop-filter: blur(20px)){
+      background-color: fade(@black, 40%);
+      backdrop-filter: blur(20px);
+    }
     
     &__wrapper {
       box-sizing: border-box;
@@ -39,6 +50,10 @@
       max-width: 950px;
       margin: 0 auto;
       padding: 0 40px 40px;
+
+      @media @bw600{
+        padding: 0 12px 40px;
+      }
     }
 
     &__title {
@@ -47,7 +62,8 @@
       align-items: center;
       margin: -40px 0 70px -85px;
       padding: 10px 85px;
-      width: 595px;
+      max-width: 595px;
+      width: 100%;
       min-height: 80px;
       background-color: @black;
       text-transform: uppercase;
@@ -58,6 +74,23 @@
       color: @white;
       letter-spacing: 0.02em;
       z-index: 1;
+
+      @media @bw1170{
+        padding: 10px 60px 10px 20px;
+        max-width: 465px;
+        margin: -40px 0 70px 0;
+      }
+
+      @media @bw768{
+        font-size: 18px;
+        margin: -40px 0 40px ;
+      }
+
+      @media @bw500{
+        font-size: 14px;
+        margin-right: 25px;
+        width: auto;
+      }
     }
 
     &__sticky-close {

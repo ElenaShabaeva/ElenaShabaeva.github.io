@@ -8,19 +8,30 @@
     <main class="main">
         <div class="home">
             <div class="main-title">
-                <p class="main-title__h1">арт — пространство</p> 
-                <svg class="main-title__svg" width="1920" height="325">
-                    <use xlink:href="assets/icons/symbols.svg#LENNI"></use>
-                </svg>
+                <h1 class="main-title__h1">арт — пространство</h1> 
+                <picture class="main-title__picture">
+                    <img src="assets/images/LENNI.svg" alt="logo" class="main-title__img">
+                </picture>
                 <p class="main-title__h1">для людей, горящих сердцЕМ и делом <br> место для настоящего</p>
             </div>
             
-            <!-- prettier-ignore -->
-            @@include('blocks/index-wants.html')
+             <!-- prettier-ignore -->
+             @@include('blocks/offers.html', {"class": "home__offers"})
 
+            <!-- prettier-ignore -->
             @@include('blocks/about.html')
+
+            <!-- prettier-ignore -->
+            @@include('blocks/upcoming.html', {"class": "home__upcoming"})
+            
             <!-- prettier-ignore -->
             @@include('blocks/blog-listing.html', {"class": "home__listing"})
+
+            <!-- prettier-ignore -->
+            @@include('blocks/contacts.html', {"class": "home_contacts"})
+            
+            <!-- prettier-ignore -->
+            @@include('blocks/doit.html', {"class": "home__doit"})
         </div>
     </main>
 
@@ -29,5 +40,9 @@
 
     <!-- prettier-ignore -->
     @@include('blocks/event-pp.html')
+
+    <script src="https://maps.googleapis.com/maps/api/js?key="></script>
+    <script src="scripts/swiper.min.js"></script>
+    <script src="scripts/main.min.js"></script>
 </body>
 </html>

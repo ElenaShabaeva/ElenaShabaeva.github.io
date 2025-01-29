@@ -2,6 +2,10 @@
     max-width: 410px;
     width: 100%;
 
+    @media @bw768{
+        max-width: 390px;
+    }
+
     &__title{
         font-weight: 600;
         margin: 0 0 15px;
@@ -12,11 +16,15 @@
     &__wrapper{
         display: flex;
         margin-bottom: 15px;
+        height: 50px;
+
+        @media @bw768{
+            margin: 0 -20px 15px;
+        }
     }
 
     &__field-wrapper{
         flex-grow: 1;
-        height: 50px;
     }
 
     &__input{
@@ -48,7 +56,13 @@
         outline: none;
         height: 100%;
         padding: 15px 23px;
+        font-size: 14px;
         background-color: @black;
         color: @white;
+
+        @media @bw768{
+            padding: 15px 20px;
+            font-size: 12px;
+        }
     }
 }

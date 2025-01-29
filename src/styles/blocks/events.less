@@ -1,12 +1,50 @@
 .events {
     padding: 140px 0 100px;
 
-    &__listing {
-        margin-bottom: 100px;
+    @media @bw1020{
+        padding-top: 90px;
+    }
+
+    @media @bw600{
+        padding-top: 80px;
     }
 
     &__table-container{
         .container;
         padding-bottom: 50px;
+        
     }
+    
+    &__block{
+        .container;
+    }
+
+    &__offers{
+        margin-bottom: 100px;
+    }
+
+    &__info{
+        display: flex;
+        gap: 65px;
+
+        @media @bw1020{
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .contacts-item{
+            width: calc(33.333% - 40px);
+
+            @media @bw1020{
+                max-width: 280px;
+                width: calc(50% - 50px);
+            }
+
+            @media @bw600{
+                width: 100%;
+            }
+        }
+    }
+
 }

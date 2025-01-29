@@ -15,6 +15,14 @@
 
       &--w50 {
         width: calc(50% - 30px);
+
+        @media @bw1170{
+          width: calc(50% - 15px);
+        }
+
+        @media @bw600{
+          width: 100%;
+        }
       }
 
       &--mb30{
@@ -39,6 +47,11 @@
       display: flex;
       align-items: center;
       margin-top: 40px;
+
+      @media @bw500{
+        flex-direction: column;
+        gap: 30px;
+      }
     }
 
     &__submit{
@@ -47,7 +60,7 @@
     }
 
     &__close-btn{
-        margin-left: 200px;
+        margin: 0 auto;
         border: none;
         padding: 10px 15px;
         background-color: transparent;
