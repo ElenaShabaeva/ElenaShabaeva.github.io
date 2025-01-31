@@ -6,9 +6,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/styles.min.css?ver=0">
 
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/assets/favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+
+  <meta name="msapplication-TileColor" content="#dedede">
+  <meta name="msapplication-TileImage" content="/assets/favicons/ms-icon-144x144.png">
+  <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
+
+  <!-- <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#bc3324"> -->
+
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
+
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/android-icon-192x192.png">
+  <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+  <meta name="apple-mobile-web-app-title" content="Lenni Art">
+  <meta name="application-name" content="Lenni Art">
+  <meta name="theme-color" content="#dedede">
+
+  <meta name="description" content="Арт—пространство для людей, горящих сердец и делом">
+  <meta name="keywords" content="Lenni Art, пространство, мероприятия">
+
+  <meta property="og:title" content="Lenni Art" />
+  <meta property="og:description" content="Арт пространство для людей, горящих сердцем и делом" />
+  <meta property="og:image" content="/assets/images/lenni-art.jpg">
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lenni-art.ru/" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+  <script src="scripts/jquery-3.7.1.min.js"></script>
+
+  <script src="scripts/toastr.min.js"></script>
+  <script type="text/javascript">
+        Command: toastr["success"]("Вы сделали все правильно", "Успех!")
+        toastr.optuins = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toastr-top-right",
+            "preventDuplicates": false,
+            "onClick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "2500",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hodeMethod": "fadeOut",
+        }
+
+        toastr["success"](`<div><div class="toast-title">Заголовок</><div class="toast-message">Сообщение</div><div class="toast-btns"><a href="#" class="btn btn--red toast-btn">Вход</a><a href="#" class="btn toast-btn">Регистрация</a></div></div>`)
+    </script>
 
   <title>Lenni Art</title>
 </head>
@@ -307,7 +365,7 @@
         <a href="#" class="page-footer__block1-link">Наши проекты</a>
         <a href="#" class="page-footer__block1-link">Контакты</a>
       </div>
-      <form class="page-footer__subscribe-form subscribe-form">
+      <form action="https://jsonplaceholder.typicode.com/posts" class="page-footer__subscribe-form subscribe-form" id="js-subscribeForm">
         <h4 class="subscribe-form__title">Подпишись и будь в курсе происходящего</h4>
         <div class="subscribe-form__wrapper">
           <div class="subscribe-form__field-wrapper">
@@ -370,7 +428,7 @@
           <br />и мы подберем площадку
         </h2>
 
-        <form class="pp__form form">
+        <form class="pp__form form" id="js-eventForm">
           <div class="form__list form__list--mb30">
             <div class="field form__field form__field--w50">
               <h6 class="field__title">Формат мероприятия:</h6>
@@ -405,7 +463,7 @@
             <div class="form__group form__group--w50">
               <label class="form__field form__field--mb30 field">
                 <span class="field__title">Планируемое количество посетителей:</span>
-                <select class="field__select" name="amount" placeholder="Выберите планируемое число посетителей">
+                <select class="field__select js-selectric" name="amount" placeholder="Выберите планируемое число посетителей">
                   <option value="20">до 20 человек</option>
                   <option value="100">
                     от 20 до 100 человек
@@ -417,15 +475,15 @@
                 </select>
               </label>
 
-              <div class="form__field field">
+              <div class="form__field field js-dateField">
                 <h6 class="field__title">Дата проведения:</h6>
-
                 <div class="field__date">
                   <div class="field__date-inputs">
-                    <input class="field__date-input" type="text" placeholder="ДД" readonly />
-                    <input class="field__date-input" type="text" placeholder="ММ" readonly />
-                    <input class="field__date-input field__date-input--year" type="text" placeholder="ГГГГ" readonly />
+                    <input class="field__date-input js-dateDay" type="text" placeholder="ДД" readonly />
+                    <input class="field__date-input js-dateMonth" type="text" placeholder="ММ" readonly />
+                    <input class="field__date-input field__date-input--year js-dateYear" type="text" placeholder="ГГГГ" readonly />
                   </div>
+                  <input class="field__date-picker js-dateInput" type="text" name="date" readonly required />
                 </div>
               </div>
             </div>
@@ -447,7 +505,7 @@
 
               <label class="field form__field form__field--w50">
                 <span class="field__label">Телефон*</span>
-                <input class="field__input" type="tel" placeholder="Телефон" name="phone" required />
+                <input class="field__input js-mobileMask" type="tel" placeholder="Телефон" name="phone" required />
               </label>
 
               <label class="field form__field form__field--w50">
@@ -484,6 +542,16 @@
       </div>
     </div>
   </div>
+
+  <script src="scripts/jquery.selectric.min.js"></script>
+  <script src="scripts/jquery.mask.js"></script>
+
+  <script src="scripts/air-datepicker.js"></script>
+
+  <script src="scripts/jquery.validate.js"></script>
+
+  <script src="scripts/jquery.validate-init.js"></script>
+  <script src="scripts/main.min.js"></script>
 </body>
 
 </html>

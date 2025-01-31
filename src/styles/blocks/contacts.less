@@ -4,13 +4,14 @@
     &__container{
         .container;
         display: flex;
+        align-items: center;
         justify-content: space-between;
         gap: 50px;
 
         @media @bw1020{
             flex-direction: column-reverse;
             gap: 100px;
-            align-items: center;
+            //align-items: center;
         }
     }
 
@@ -31,17 +32,17 @@
         }
     }
 
-    // &__item{
-    //     @media @bw1020{
-    //         display: flex;
-    //         flex-direction: column;
-    //         gap: 30px;
-    //         align-items: center;
-    //     }
+    &__map{
+        max-width: 750px;
+        width: 100%;
+        height: 490px;
 
-    //     @media @bw768{
-    //         display: flex;
-    //         flex-direction: row;
-    //     }
-    // }
+        @media @bw1020{
+            height: 465px;
+        }
+
+        @media @bw500{
+            height: 186px;
+        }
+    }
 }
