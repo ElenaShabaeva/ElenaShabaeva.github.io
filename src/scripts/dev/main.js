@@ -355,7 +355,7 @@
         });
     }
 
-    /*ajax-запрос дял формы в footer*/
+    /*ajax-запрос для формы в footer*/
     const subscribeForm = $("#js-subscribeForm");
     if (subscribeForm.length) {
         const subscribeAction = subscribeForm.attr("action");
@@ -382,4 +382,128 @@
             },
         });
     }
+
+    /*выбор столиков на странице event.html*/
+    const TotalCostElement = document.querySelector('#js-total-cost');
+    const TicketElementRed = document.querySelector("#js-count-ticket-red");
+    const TicketSumRed = document.querySelector("#js-sum-ticket-red");
+    const TicketElementBlack = document.querySelector("#js-count-ticket-black");
+    const TicketSumBlack = document.querySelector("#js-sum-ticket-black");
+    let totalCost = 0;
+    let countRed = 0;
+    let sumRed = 0;
+    let sumBlack = 0;
+    let countBlack = 0;
+    let price = 0;
+
+    const checkboxes = document.querySelectorAll(".check__input");
+    checkboxes.forEach(item => {
+        item.addEventListener("change", function(){
+            const checkID = this.id;
+            const checkNum = checkID.replace("table", "");
+            const svgID = `#table-svg-${checkNum}`;
+            const tableElemet = document.querySelector(svgID);
+
+            if(item.checked){
+                tableElemet.classList.add("selected");
+
+                if(tableElemet.classList.contains("js-red")){
+                    tableElemet.classList.add("scene__table--red");
+                    price = parseInt(document.querySelector('.legend__check-label[data-price="1400"]').dataset.price);
+                    countRed ++;
+                    sumRed += price;
+                }
+                else if(tableElemet.classList.contains("js-black")){
+                    tableElemet.classList.add("scene__table--black");
+                    price = parseInt(document.querySelector('.legend__check-label[data-price="1250"]').dataset.price);
+                    countBlack++;
+                    sumBlack += price;
+                }
+                totalCost += price
+            }
+            else{
+                tableElemet.classList.remove("selected");
+
+                if(tableElemet.classList.contains("js-red")){
+                    tableElemet.classList.remove("scene__table--red");
+                    price = parseInt(document.querySelector('.legend__check-label[data-price="1400"]').dataset.price);
+                    countRed--;
+                    sumRed -= price;
+                }
+                else if(tableElemet.classList.contains("js-black")){
+                    tableElemet.classList.remove("scene__table--black");
+                    price = parseInt(document.querySelector('.legend__check-label[data-price="1250"]').dataset.price);
+                    countBlack--;
+                    sumBlack -= price;
+                }
+
+                totalCost -= price;
+            }
+
+            TicketElementRed.textContent = countRed;
+            TicketElementBlack.textContent = countBlack;
+            TicketSumRed.textContent = sumRed;
+            TicketSumBlack.textContent = sumBlack;
+            TotalCostElement.textContent = totalCost;
+        });
+    });
+
+    const tables = document.querySelectorAll(".scene__table");
+    tables.forEach(item => {
+        item.addEventListener("click", function(){
+            const svgID = this.id;
+            const svgNum = svgID.replace("table-svg-", "");
+            const checkID = `#table${svgNum}`;
+            const tableElemet = document.querySelector(`#${svgID}`);
+
+            if(tableElemet.classList.contains("js-red")){
+                price = parseInt(document.querySelector('.legend__check-label[data-price="1400"]').dataset.price);
+            }
+            else if(tableElemet.classList.contains("js-black")){
+                price = parseInt(document.querySelector('.legend__check-label[data-price="1250"]').dataset.price);
+            }
+
+            this.classList.toggle('selected');
+            if (this.classList.contains('selected')) {
+                if(tableElemet.classList.contains("js-red")){
+                    tableElemet.classList.add("scene__table--red");
+                    price = parseInt(document.querySelector('.legend__check-label[data-price="1400"]').dataset.price);
+                    countRed++;
+                    sumRed += price
+                }
+                else if(tableElemet.classList.contains("js-black")){
+                    tableElemet.classList.add("scene__table--black");
+                    price = parseInt(document.querySelector('.legend__check-label[data-price="1250"]').dataset.price);
+                    countBlack++;
+                    sumBlack += price;
+                }
+                totalCost += price;
+            } 
+            else {
+                if(tableElemet.classList.contains("js-red")){
+                    tableElemet.classList.remove("scene__table--red");
+                    price = parseInt(document.querySelector('.legend__check-label[data-price="1400"]').dataset.price);
+                    countRed--;
+                    sumRed -= price;
+                }
+                else if(tableElemet.classList.contains("js-black")){
+                    tableElemet.classList.remove("scene__table--black");
+                    price = parseInt(document.querySelector('.legend__check-label[data-price="1250"]').dataset.price);
+                    countBlack--;
+                    sumBlack -= price;
+                }
+                totalCost -= price;
+            }
+
+            const checkbox = document.querySelector(checkID);
+            checkbox.checked = !checkbox.checked;
+
+            TicketElementRed.textContent = countRed;
+            TicketElementBlack.textContent = countBlack;
+            TicketSumRed.textContent = sumRed;
+            TicketSumBlack.textContent = sumBlack;
+            TotalCostElement.textContent = totalCost;
+        });
+    });
+
 })();

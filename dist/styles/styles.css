@@ -3068,6 +3068,28 @@ button.swiper-pagination-bullet {
 .arrow__events-icon {
   rotate: 90deg;
 }
+.scene__table {
+  cursor: pointer;
+}
+.scene__table--red .scene__table-group {
+  fill: #BD362F;
+}
+.scene__table--red .scene__table-num {
+  fill: #FFFFFF;
+}
+.scene__table--black .scene__table-group {
+  fill: #000000;
+}
+.scene__table--black .scene__table-num {
+  fill: #FFFFFF;
+}
+.scene__table--disabled {
+  pointer-events: none;
+}
+.scene__table--disabled .scene__table-group,
+.scene__table--disabled .scene__table-num {
+  opacity: 0.5;
+}
 .offers {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3963,7 +3985,7 @@ button.swiper-pagination-bullet {
   width: auto;
 }
 .legend__check-label::after {
-  content: " " attr(data-price) " | " attr(data-caption);
+  content: attr(data-price) " ₽ " " | " attr(data-caption);
 }
 .legend__marker-variant {
   display: -webkit-box;

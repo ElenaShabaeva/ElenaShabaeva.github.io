@@ -1,0 +1,31 @@
+.scene__table{
+    cursor: pointer;
+
+    &--red{
+        .scene__table-group{
+            fill: @red;
+        }
+
+        .scene__table-num{
+            fill: @white;
+        }
+    }
+
+    &--black{
+        .scene__table-group{
+            fill: @black;
+        }
+
+        .scene__table-num{
+            fill: @white;
+        }
+    }
+
+    &--disabled{
+        pointer-events: none;
+        .scene__table-group,
+        .scene__table-num{
+            opacity: .5;
+        }
+    }
+}
