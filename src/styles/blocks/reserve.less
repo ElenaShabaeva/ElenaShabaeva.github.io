@@ -25,10 +25,10 @@
 
     @media @bw1340 {
         gap: 65px 6.5%;
-        grid-template-columns: 401px auto;
+        grid-template-columns: 340px calc(93.5% - 340px);
     }
 
-    @media @bw768 {
+    @media @bw1020 {
         gap: 60px;
         grid-template-columns: auto 390px;
         grid-template-areas:
@@ -36,12 +36,18 @@
             "checks legend"
             "checks order";
     }
-    @media @bw600 {
+    @media @bw768 {
         grid-template-columns: 100%;
         grid-template-areas:
             "scheme"
             "legend"
             "checks"
             "order";
+    }
+
+    &__section-title{
+        @media @bw768{
+            font-size: 16px;
+        }
     }
 }

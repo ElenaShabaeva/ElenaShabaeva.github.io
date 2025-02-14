@@ -3,7 +3,7 @@
     align-items: center;
     gap: 54px;
 
-    @media @bw1020{
+    @media @bw1170{
         display: flex;
         flex-direction: column;
         gap: 30px;
@@ -20,7 +20,8 @@
         gap: 40px;
 
         .contacts-item__title,
-        .contacts-item__text{
+        .contacts-item__text,
+        .contacts-item__text[href]{
             text-align: center;
         }
 
@@ -32,6 +33,8 @@
 
     &__wrap-icon{
         display: flex;
+        justify-content: center;
+        align-items: center;
         width: 110px;
         height: 110px;
         background-color: @black;
@@ -43,20 +46,16 @@
         }
     }
 
-    &__icon{
-        margin: auto;
-    }
-
-    &__info{
-        justify-items: flex-start;
-    }
+    // &__icon{
+    //     margin: auto;
+    // }
 
     &__title{
         margin: 0 0 10px;
         font-size: 20px;
         font-weight: 600;
         line-height: 1.35;
-        width: 100%;
+        //width: 100%;
 
         @media @bw1020{
             font-size: 18px;
@@ -73,13 +72,15 @@
         font-weight: 400;
         font-size: 16px;
         line-height: 1.3;
+        width: auto;
 
-        @media @bw1020{
+        @media @bw1170{
             text-align: center;
         }
 
         @media @bw768{
             margin-bottom: 0;
+            text-align: left;
         }
 
         &[href]{
@@ -88,9 +89,13 @@
             text-decoration: none;
             transition: color 0.2s;
 
-            @media @bw1020{
+            @media @bw1170{
                 text-align: center;
-            }    
+            } 
+            
+            @media @bw768{
+                text-align: left;
+            }  
 
             &:hover{
                 @media(hover: hover){
