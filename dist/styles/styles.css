@@ -4717,8 +4717,26 @@ button.swiper-pagination-bullet {
 }
 .upcoming__wrapper {
   width: 100%;
+  padding: 90px 0 70px;
   background-color: rgba(255, 255, 255, 0.6);
-  padding: 90px 0 40px;
+}
+.upcoming__wrapper::before,
+.upcoming__wrapper::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-top: 40px solid rgba(255, 255, 255, 0.6);
+}
+.upcoming__wrapper::before {
+  left: 0;
+  border-right: 61vw solid transparent;
+}
+.upcoming__wrapper::after {
+  right: 0;
+  border-left: 39vw solid transparent;
 }
 .upcoming__container {
   -webkit-box-sizing: border-box;
@@ -5111,6 +5129,9 @@ button.swiper-pagination-bullet {
   .main-title__picture::before {
     padding-top: 18.5%;
   }
+  .upcoming__wrapper {
+    padding: 70px 0 55px;
+  }
 }
 @media (max-width: 1339px) {
   .container {
@@ -5139,6 +5160,25 @@ button.swiper-pagination-bullet {
     margin-bottom: 100px;
     padding: 11px 40px;
     font-size: 24px;
+  }
+  .contacts-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 30px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .contacts-item__text {
+    text-align: center;
+  }
+  .contacts-item__text[href] {
+    text-align: center;
   }
   .contacts__container {
     padding-left: 30px;
@@ -5215,25 +5255,6 @@ button.swiper-pagination-bullet {
   }
 }
 @media (max-width: 1169px) {
-  .contacts-item {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    gap: 30px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .contacts-item__text {
-    text-align: center;
-  }
-  .contacts-item__text[href] {
-    text-align: center;
-  }
   .page-footer {
     padding-bottom: 60px;
   }
